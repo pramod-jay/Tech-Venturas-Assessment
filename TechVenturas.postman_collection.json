@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "5852be72-1b07-4074-9a9b-6cf53e3fff8e",
+		"name": "TechVenturas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22018726"
+	},
+	"item": [
+		{
+			"name": "gateway",
+			"item": [
+				{
+					"name": "Create Gateway",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serialNumber\":\"S007\",\n    \"name\":\"Server2\",\n    \"ipAddress\":\"192.168.1.231\"\n}\n\n//Response types\n//1:Gateway has been created successfully\n//2:Another gateway is already available from this serial number\n//3:IP is not a valid IPv4 address\n//4:Serial number cannot be null\n//5:Gateway name cannot be null\n//6:Gateway IP address cannot be null",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gateway/createGateway",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"createGateway"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All Gateways",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gateway/getGateways",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"getGateways"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update IP address",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serialNumber\":\"S004\",\n    \"ipAddress\":\"255.200.1.50\"\n}\n\n//Response types\n//1:IP address of gateway has been updated successfully\n//2:Serial number cannot be null\n//3:Gateway IP address cannot be null\n//4:Gateway not found\n//5:IP is not a valid IPv4 address",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gateway/updateIp",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"updateIp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gateway",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serialNumber\":\"S004\",\n    \"name\":\"Server3\",\n    \"ipAddress\":\"192.168.1.8\"\n}\n\n//Response types\n//1:Serial number cannot be null\n//2:Gateway name cannot be null\n//3:Gateway IP address cannot be null\n//4:Gateway not found\n//5:IP is not a valid IPv4 address\n//6:Gateway has been updated successfully",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gateway/updateGateway",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"updateGateway"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Gateway by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/gateway/getGatewayById/S001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"getGatewayById",
+								"S001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Gateway",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Response types\n//1:Gateway not found\n//2:Gateway has been deleted successfully",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/gateway/deleteGateway/S007",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"gateway",
+								"deleteGateway",
+								"S007"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Device",
+			"item": [
+				{
+					"name": "Create Device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vendor\":\"Apple\",\n    \"online\":\"true\",\n    \"serialNumber\":\"\"\n}\n\n//Response types\n//1:Vendor cannot be null\n//2:Set online status as true or false\n//3:Gateway not found\n//4:Cannot connect devices more than 10 to the device -> {SerialNumber}\n//5:Device has been created successfully\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/device/createDevice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"createDevice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch All Devices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/device/getDevices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"getDevices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status of Device",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\":6,\n    \"online\":\"false\"\n}\n\n//Response types\n//1:Device not found\n//2:Status of device has been updated successfully",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/device/updateStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"updateStatus"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Gateway of Device",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\":16,\n    \"serialNumber\":\"S001\"\n}\n\n//Response types\n//1:Device not found\n//2:Gateway not found\n//3:Cannot connect devices more than 10 to the device -> {SerialNumber}\n//4:Gateway of device has been updated successfully",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/device/updateGateway",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"updateGateway"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Device",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"uid\":55,\n    \"vendor\":\"Samsung\",\n    \"online\":\"True\",\n    \"serialNumber\":\"S003\"\n}\n\n//Response types\n//1:Device not found\n//2:Vendor cannot be null\n//3:Set online status as true or false\n//4:Gateway not found\n//5:3:Cannot connect devices more than 10 to the device -> {SerialNumber}\n//6:Device has been updated successfully\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/device/updateDevice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"updateDevice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch Device by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/device/getDeviceById/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"getDeviceById",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Device",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//Response types\n//1:Device not found\n//2:Device has been deleted successfully\"",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/device/deleteDevice/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"device",
+								"deleteDevice",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
