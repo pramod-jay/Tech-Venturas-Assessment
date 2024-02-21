@@ -69,8 +69,6 @@ public class GatewayServiceImpl implements GatewayService{
         try {
             List<Gateway> gateways = gatewayRepo.findAll();
 
-            System.out.println(gateways);
-
             List<GatewayDTO> gatewayDTOS = new ArrayList<>();
 
             //Get peripheral devices of each gateway and map them to GatewayDTO
