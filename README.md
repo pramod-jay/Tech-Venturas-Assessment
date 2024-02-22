@@ -31,11 +31,15 @@ Steps to implement and set up the project:
    <img width="321" alt="Screenshot 2024-02-21 at 23 49 08" src="https://github.com/pramod-jay/Tech-Venturas-Assessment/assets/91390000/c60d9249-8701-4b06-9634-d89aeb6fb621">
 
 4. Through the following path <b>‘src/main/java/com/techventuras/TechVenturas/TechVenturasApplication.java’</b>, Run the <b>TechVenturasApplication.java</b> application.
+   <br/>or<br/>Navigate to the root of the project via command line and execute the command
+   ```sh
+   mvn spring-boot:run
+   ```
 
-5. Import <b>TechVenturas.postman_collection.json</b> to the Postman which is in the root folder.
+6. Import <b>TechVenturas.postman_collection.json</b> to the Postman which is in the root folder.
    <img width="443" alt="Screenshot 2024-02-21 at 22 49 41" src="https://github.com/pramod-jay/Tech-Venturas-Assessment/assets/91390000/0ef4a546-c1cf-4a1e-85f2-1c67cda51967">
    
-6. Now the environment is ready for testing via Postman.👏<br/>
+7. Now the environment is ready for testing via Postman.👏<br/>
    ![Screenshot 2024-02-21 at 22 50 59](https://github.com/pramod-jay/Tech-Venturas-Assessment/assets/91390000/7efe202c-e744-401e-b6ea-b909d1da805a)
 
 ## Assumptions
